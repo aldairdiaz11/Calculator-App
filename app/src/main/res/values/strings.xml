@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">Calculator App</string>
-    <string name="btn0">0</string>
+    <string name="btnZero">0</string>
     <string name="btn1">1</string>
     <string name="btn2">2</string>
     <string name="btn3">3</string>
@@ -16,6 +16,7 @@
     <string name="btnMinus">-</string>
     <string name="btnPlus">+</string>
     <string name="btnEqual">=</string>
+    <string name="btnClear">CLR</string>
 
     <string name="result">|Calc App</string>
 

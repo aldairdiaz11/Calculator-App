@@ -23,7 +23,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:padding="5dp">
+        android:padding="5dp"
+        android:layout_weight="1">
 
         <Button
             android:id="@+id/btn7"
@@ -35,7 +36,7 @@
             android:textSize="24sp"
             android:backgroundTint="@color/btnColor"
             android:onClick="onDigit"
-            />
+            tools:ignore="NestedWeights" />
 
         <Button
             android:id="@+id/btn8"
@@ -79,7 +80,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:padding="5dp">
+        android:padding="5dp"
+        android:layout_weight="1">
 
         <Button
             android:id="@+id/btn4"
@@ -135,7 +137,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:padding="5dp">
+        android:padding="5dp"
+        android:layout_weight="1">
 
         <Button
             android:id="@+id/btn1"
@@ -184,6 +187,73 @@
             android:backgroundTint="@color/btnColor"
             android:onClick="onDigit"
             />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="5dp"
+        android:layout_weight="1">
+
+        <Button
+            android:id="@+id/btnZero"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:layout_margin="2dp"
+            android:text="@string/btnZero"
+            android:textSize="24sp"
+            android:backgroundTint="@color/btnColor"
+            android:onClick="onDigit"
+            tools:ignore="NestedWeights" />
+
+
+        <Button
+            android:id="@+id/btnClear"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_margin="2dp"
+            android:text="@string/btnClear"
+            android:textSize="24sp"
+            android:backgroundTint="@color/btnColor"
+            android:onClick="onClear"
+            />
+
+        <Button
+            android:id="@+id/btnPlus"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_margin="2dp"
+            android:text="@string/btnPlus"
+            android:textSize="24sp"
+            android:backgroundTint="@color/btnColor"
+            android:onClick="onDigit"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="5dp"
+        android:layout_weight="1">
+
+        <Button
+            android:id="@+id/btnEqual"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:layout_margin="2dp"
+            android:text="@string/btnEqual"
+            android:textSize="24sp"
+            android:backgroundTint="@color/btnColor"
+            android:onClick="onDigit"
+            tools:ignore="NestedWeights" />
 
     </LinearLayout>
 
