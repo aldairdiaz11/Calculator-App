@@ -17,6 +17,7 @@
     <string name="btnPlus">+</string>
     <string name="btnEqual">=</string>
     <string name="btnClear">CLR</string>
+    <string name="decPoint">.</string>
 
     <string name="result">|Calc App</string>
 

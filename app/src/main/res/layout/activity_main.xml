@@ -201,12 +201,24 @@
             android:id="@+id/btnZero"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="2"
+            android:layout_weight="1"
             android:layout_margin="2dp"
             android:text="@string/btnZero"
             android:textSize="24sp"
             android:backgroundTint="@color/btnColor"
             android:onClick="onDigit"
+            tools:ignore="NestedWeights" />
+
+        <Button
+            android:id="@+id/btnDecPoint"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_margin="2dp"
+            android:text="@string/decPoint"
+            android:textSize="24sp"
+            android:backgroundTint="@color/btnColor"
+            android:onClick="onDecimalPoint"
             tools:ignore="NestedWeights" />
 
 
