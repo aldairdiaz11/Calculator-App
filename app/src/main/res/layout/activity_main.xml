@@ -71,7 +71,7 @@
             android:text="@string/btnDiv"
             android:textSize="24sp"
             android:backgroundTint="@color/btnColor"
-            android:onClick="onDigit"
+            android:onClick="onOperator"
             />
 
     </LinearLayout>
@@ -128,7 +128,7 @@
             android:text="@string/btnTimes"
             android:textSize="24sp"
             android:backgroundTint="@color/btnColor"
-            android:onClick="onDigit"
+            android:onClick="onOperator"
             />
 
     </LinearLayout>
@@ -185,7 +185,7 @@
             android:text="@string/btnMinus"
             android:textSize="24sp"
             android:backgroundTint="@color/btnColor"
-            android:onClick="onDigit"
+            android:onClick="onOperator"
             />
 
     </LinearLayout>
@@ -243,7 +243,7 @@
             android:text="@string/btnPlus"
             android:textSize="24sp"
             android:backgroundTint="@color/btnColor"
-            android:onClick="onDigit"
+            android:onClick="onOperator"
             />
 
     </LinearLayout>
@@ -264,7 +264,7 @@
             android:text="@string/btnEqual"
             android:textSize="24sp"
             android:backgroundTint="@color/btnColor"
-            android:onClick="onDigit"
+            android:onClick="onEqual"
             tools:ignore="NestedWeights" />
 
     </LinearLayout>

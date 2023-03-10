@@ -12,7 +12,7 @@
     <string name="btn9">9</string>
 
     <string name="btnDiv">/</string>
-    <string name="btnTimes">X</string>
+    <string name="btnTimes">*</string>
     <string name="btnMinus">-</string>
     <string name="btnPlus">+</string>
     <string name="btnEqual">=</string>

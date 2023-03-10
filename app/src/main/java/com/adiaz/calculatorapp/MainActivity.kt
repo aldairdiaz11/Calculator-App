@@ -36,4 +36,55 @@ class MainActivity : AppCompatActivity() {
             lastDecPoint = true
         }
     }
+
+    fun onOperator(view: View) {
+        screenInput?.text?.let {
+            if(lastNumeric && !isOperatorAdded(it.toString())){
+                // Operations:
+                screenInput?.append((view as Button).text)
+                lastNumeric = false
+                lastDecPoint = false
+            }
+        }
+
+    }
+
+    fun onEqual(view: View) {
+        if(lastNumeric) {
+            var screenValue = screenInput?.text.toString()
+            var prefix = ""
+
+            try{
+                if(screenValue.startsWith("-")) {
+                    prefix = "-"
+                    screenValue = screenValue.substring(1)
+                }
+                if(screenValue.contains("-")) {
+                    val splitValue = screenValue.split("-")
+
+                    var one = splitValue[0]
+                    val two = splitValue[1]
+
+                    if(prefix.isNotEmpty()) {
+                        one = prefix + one
+                    }
+
+                    screenInput?.text = (one.toDouble() - two.toDouble()).toString()
+                }
+
+            }catch (e: ArithmeticException){
+                e.printStackTrace()
+            }
+        }
+    }
+
+    private fun isOperatorAdded(value: String): Boolean {
+
+        return if(value.startsWith("-")) {
+            false
+        }else {
+            value.contains("/") || value.contains("*") || value.contains("+") ||
+                    value.contains("-")
+        }
+    }
 }
