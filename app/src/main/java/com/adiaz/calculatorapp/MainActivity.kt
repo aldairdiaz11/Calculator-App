@@ -1,5 +1,6 @@
 package com.adiaz.calculatorapp
 
+import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -9,8 +10,8 @@ import android.widget.TextView
 class MainActivity : AppCompatActivity() {
 
     private var screenInput: TextView? = null
-    var lastNumeric: Boolean = false
-    var lastDecPoint: Boolean = false
+    private var lastNumeric: Boolean = false
+    private var lastDecPoint: Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -49,6 +50,7 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+    @SuppressLint("SetTextI18n")
     fun onEqual(view: View) {
         if(lastNumeric) {
             var screenValue = screenInput?.text.toString()
@@ -69,13 +71,57 @@ class MainActivity : AppCompatActivity() {
                         one = prefix + one
                     }
 
-                    screenInput?.text = (one.toDouble() - two.toDouble()).toString()
+                    screenInput?.text = removeZeroAfterDot(
+                        (one.toDouble() - two.toDouble()).toString())
+                } else if(screenValue.contains("+")) {
+                    val splitValue = screenValue.split("+")
+
+                    var one = splitValue[0]
+                    val two = splitValue[1]
+
+                    if(prefix.isNotEmpty()) {
+                        one = prefix + one
+                    }
+
+                    screenInput?.text = removeZeroAfterDot(
+                        (one.toDouble() + two.toDouble()).toString())
+                } else if(screenValue.contains("*")) {
+                    val splitValue = screenValue.split("*")
+
+                    var one = splitValue[0]
+                    val two = splitValue[1]
+
+                    if(prefix.isNotEmpty()) {
+                        one = prefix + one
+                    }
+
+                    screenInput?.text = removeZeroAfterDot(
+                        (one.toDouble() * two.toDouble()).toString())
+                } else if(screenValue.contains("/")) {
+                    val splitValue = screenValue.split("/")
+
+                    var one = splitValue[0]
+                    val two = splitValue[1]
+
+                    if(prefix.isNotEmpty()) {
+                        one = prefix + one
+                    }
+
+                    screenInput?.text = removeZeroAfterDot(
+                        (one.toDouble() / two.toDouble()).toString())
                 }
 
             }catch (e: ArithmeticException){
                 e.printStackTrace()
             }
         }
+    }
+
+    private fun removeZeroAfterDot(result: String) : String{
+        var value = result
+        if(result.contains(".0"))
+            value = result.substring(0, result.length - 2)
+        return value
     }
 
     private fun isOperatorAdded(value: String): Boolean {
